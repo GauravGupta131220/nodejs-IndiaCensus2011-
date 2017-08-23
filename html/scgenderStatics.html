@@ -28,7 +28,7 @@ svg {
 </style>
 
 <body>
-    <h2>Stacked Bar Chart - d3.v4 implementation</h2>
+    <h2>Stacked Bar Chart - Male/Female Graduates State Wise for SC</h2>
     <div id='stacked-bar'></div>
     <script src="//d3js.org/d3.v4.min.js"></script>
     <script>
@@ -97,186 +97,16 @@ svg {
                 .call(yAxis);
         }
     }
-    var data = [{
-    "state": "State - JAMMU & KASHMIR",
-    "Males": 7592,
-    "Females": 1646
-  },
-  {
-    "state": "State - HIMACHAL PRADESH",
-    "Males": 21703,
-    "Females": 2597
-  },
-  {
-    "state": "State - PUNJAB",
-    "Males": 72143,
-    "Females": 14622
-  },
-  {
-    "state": "State - CHANDIGARH",
-    "Males": 4837,
-    "Females": 503
-  },
-  {
-    "state": "State - UTTARAKHAND",
-    "Males": 27802,
-    "Females": 2837
-  },
-  {
-    "state": "State - HARYANA",
-    "Males": 36475,
-    "Females": 6408
-  },
-  {
-    "state": "State - NCT OF DELHI",
-    "Males": 60243,
-    "Females": 2211
-  },
-  {
-    "state": "State - RAJASTHAN",
-    "Males": 54402,
-    "Females": 30281
-  },
-  {
-    "state": "State - UTTAR PRADESH",
-    "Males": 264558,
-    "Females": 85249
-  },
-  {
-    "state": "State - BIHAR",
-    "Males": 25615,
-    "Females": 46542
-  },
-  {
-    "state": "State - SIKKIM",
-    "Males": 333,
-    "Females": 59
-  },
-  {
-    "state": "State - ARUNACHAL PRADESH",
-    "Males": 0,
-    "Females": 0
-  },
-  {
-    "state": "State - NAGALAND",
-    "Males": 0,
-    "Females": 0
-  },
-  {
-    "state": "State - MANIPUR",
-    "Males": 3258,
-    "Females": 102
-  },
-  {
-    "state": "State - MIZORAM",
-    "Males": 33,
-    "Females": 2
-  },
-  {
-    "state": "State - TRIPURA",
-    "Males": 5002,
-    "Females": 1498
-  },
-  {
-    "state": "State - MEGHALAYA",
-    "Males": 195,
-    "Females": 24
-  },
-  {
-    "state": "State - ASSAM",
-    "Males": 14990,
-    "Females": 2165
-  },
-  {
-    "state": "State - WEST BENGAL",
-    "Males": 131832,
-    "Females": 57969
-  },
-  {
-    "state": "State - JHARKHAND",
-    "Males": 12919,
-    "Females": 193
-  },
-  {
-    "state": "State - ODISHA",
-    "Males": 32732,
-    "Females": 9228
-  },
-  {
-    "state": "State - CHHATTISGARH",
-    "Males": 24578,
-    "Females": 5088
-  },
-  {
-    "state": "State - MADHYA PRADESH",
-    "Males": 72235,
-    "Females": 23431
-  },
-  {
-    "state": "State - GUJARAT",
-    "Males": 54319,
-    "Females": 9764
-  },
-  {
-    "state": "State - DAMAN & DIU",
-    "Males": 130,
-    "Females": 5
-  },
-  {
-    "state": "State - DADRA & NAGAR HAVELI",
-    "Males": 132,
-    "Females": 6
-  },
-  {
-    "state": "State - MAHARASHTRA",
-    "Males": 244189,
-    "Females": 52670
-  },
-  {
-    "state": "State - ANDHRA PRADESH",
-    "Males": 198228,
-    "Females": 45770
-  },
-  {
-    "state": "State - KARNATAKA",
-    "Males": 111205,
-    "Females": 23467
-  },
-  {
-    "state": "State - GOA",
-    "Males": 601,
-    "Females": 108
-  },
-  {
-    "state": "State - LAKSHADWEEP",
-    "Males": 0,
-    "Females": 0
-  },
-  {
-    "state": "State - KERALA",
-    "Males": 68951,
-    "Females": 5176
-  },
-  {
-    "state": "State - TAMIL NADU",
-    "Males": 234321,
-    "Females": 40353
-  },
-  {
-    "state": "State - PUDUCHERRY",
-    "Males": 5165,
-    "Females": 539
-  },
-  {
-    "state": "State - ANDAMAN & NICOBAR ISLANDS",
-    "Males": 0,
-    "Females": 0
-  }
-    ];
     var key = ["Males", "Females"];
+    var data = d3.json("../json/scgraduates.json", function(error, jsonData) {
+
+    data = jsonData;
     initStackedBarChart.draw({
+
         data: data,
         key: key,
         element: 'stacked-bar'
+    });
+
     });
     </script>
