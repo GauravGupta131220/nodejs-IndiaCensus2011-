@@ -1,106 +1,106 @@
 [
   {
     "age": "7",
-    "litterate": 18078426
+    "litterate": 3127746
   },
   {
     "age": "8",
-    "litterate": 22836959
+    "litterate": 4051241
   },
   {
     "age": "9",
-    "litterate": 20932734
+    "litterate": 3650114
   },
   {
     "age": "10",
-    "litterate": 27097602
+    "litterate": 4844872
   },
   {
     "age": "11",
-    "litterate": 22752473
+    "litterate": 3940220
   },
   {
     "age": "12",
-    "litterate": 25485778
+    "litterate": 4503515
   },
   {
     "age": "13",
-    "litterate": 22470207
+    "litterate": 3892838
   },
   {
     "age": "14",
-    "litterate": 23157384
+    "litterate": 3999803
   },
   {
     "age": "15",
-    "litterate": 23299497
+    "litterate": 4039896
   },
   {
     "age": "16",
-    "litterate": 22079806
+    "litterate": 3782110
   },
   {
     "age": "17",
-    "litterate": 19179012
+    "litterate": 3216475
   },
   {
     "age": "18",
-    "litterate": 24230172
+    "litterate": 4157265
   },
   {
     "age": "19",
-    "litterate": 18280414
+    "litterate": 3014907
   },
   {
     "age": "20-24",
-    "litterate": 92744730
+    "litterate": 14893653
   },
   {
     "age": "25-29",
-    "litterate": 78779525
+    "litterate": 11886320
   },
   {
     "age": "30-34",
-    "litterate": 64265391
+    "litterate": 8940410
   },
   {
     "age": "35-39",
-    "litterate": 57277557
+    "litterate": 7759166
   },
   {
     "age": "40-44",
-    "litterate": 45631240
+    "litterate": 5724282
   },
   {
     "age": "45-49",
-    "litterate": 37240564
+    "litterate": 4343176
   },
   {
     "age": "50-54",
-    "litterate": 28247046
+    "litterate": 3075893
   },
   {
     "age": "55-59",
-    "litterate": 21463974
+    "litterate": 2225513
   },
   {
     "age": "60-64",
-    "litterate": 17674268
+    "litterate": 1806923
   },
   {
     "age": "65-69",
-    "litterate": 11625376
+    "litterate": 1140774
   },
   {
     "age": "70-74",
-    "litterate": 7640218
+    "litterate": 671214
   },
   {
     "age": "75-79",
-    "litterate": 3871311
+    "litterate": 281942
   },
   {
     "age": "80+",
-    "litterate": 4398558
+    "litterate": 377691
   }
 ]

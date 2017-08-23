@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var filePath = path.join(__dirname, 'India2011.csv');
+var filePath = path.join(__dirname, 'IndiaSC2011.csv');
 var myReadStream = fs.readFile(filePath, 'utf8', function(err, data) {
     //console.log(data);
     data = data.split("\n");

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis--x path {
+    display: none;
+}
+
+.path-line {
+    fill: none;
+    stroke: yellow;
+    stroke-width: 1.5px;
+}
+
+svg {
+    background: #f0f0f0;
+}
+</style>
+
+<body>
+    <h2>Stacked Bar Chart - d3.v4 implementation</h2>
+    <div id='stacked-bar'></div>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script>
+    var initStackedBarChart = {
+        draw: function(config) {
+            me = this,
+                domEle = config.element,
+                stackKey = config.key,
+                data = config.data,
+                margin = { top: 20, right: 20, bottom: 250, left: 80 },
+                parseDate = d3.timeParse("%m/%Y"),
+                width = 960 - margin.left - margin.right,
+                height = 650 - margin.top - margin.bottom,
+                xScale = d3.scaleBand().range([0, width]).padding(0.1),
+                yScale = d3.scaleLinear().range([height, 0]),
+                color = d3.scaleOrdinal(d3.schemeCategory20),
+                // xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%b")),
+                xAxis = d3.axisBottom(xScale),
+                yAxis = d3.axisLeft(yScale),
+                svg = d3.select("#" + domEle).append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var stack = d3.stack()
+                .keys(stackKey)
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetNone);
+
+            var layers = stack(data);
+            console.log(data);
+            //data.sort(function(a, b) { return b.total - a.total; });
+            xScale.domain(data.map(function(d) { return d.state; }));
+            yScale.domain([0, d3.max(layers[layers.length - 1], function(d) { return d[0] + d[1]; })]).nice();
+
+
+
+            var layer = svg.selectAll(".layer")
+                .data(layers)
+                .enter().append("g")
+                .attr("class", "layer")
+                .style("fill", function(d, i) { return color(i); });
+
+            layer.selectAll("rect")
+                .data(function(d) { return d; })
+                .enter().append("rect")
+                .attr("x", function(d) { return xScale(d.data.state); })
+                .attr("y", function(d) { return yScale(d[1]); })
+                .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]); })
+                .attr("width", xScale.bandwidth());
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", "-.55em")
+                .attr("transform", "rotate(-90)");
+
+            svg.append("g")
+                .attr("class", "axis axis--y")
+                .attr("transform", "translate(0,0)")
+                .call(yAxis);
+        }
+    }
+    var data = [{
+    "state": "State - JAMMU & KASHMIR",
+    "Males": 7592,
+    "Females": 1646
+  },
+  {
+    "state": "State - HIMACHAL PRADESH",
+    "Males": 21703,
+    "Females": 2597
+  },
+  {
+    "state": "State - PUNJAB",
+    "Males": 72143,
+    "Females": 14622
+  },
+  {
+    "state": "State - CHANDIGARH",
+    "Males": 4837,
+    "Females": 503
+  },
+  {
+    "state": "State - UTTARAKHAND",
+    "Males": 27802,
+    "Females": 2837
+  },
+  {
+    "state": "State - HARYANA",
+    "Males": 36475,
+    "Females": 6408
+  },
+  {
+    "state": "State - NCT OF DELHI",
+    "Males": 60243,
+    "Females": 2211
+  },
+  {
+    "state": "State - RAJASTHAN",
+    "Males": 54402,
+    "Females": 30281
+  },
+  {
+    "state": "State - UTTAR PRADESH",
+    "Males": 264558,
+    "Females": 85249
+  },
+  {
+    "state": "State - BIHAR",
+    "Males": 25615,
+    "Females": 46542
+  },
+  {
+    "state": "State - SIKKIM",
+    "Males": 333,
+    "Females": 59
+  },
+  {
+    "state": "State - ARUNACHAL PRADESH",
+    "Males": 0,
+    "Females": 0
+  },
+  {
+    "state": "State - NAGALAND",
+    "Males": 0,
+    "Females": 0
+  },
+  {
+    "state": "State - MANIPUR",
+    "Males": 3258,
+    "Females": 102
+  },
+  {
+    "state": "State - MIZORAM",
+    "Males": 33,
+    "Females": 2
+  },
+  {
+    "state": "State - TRIPURA",
+    "Males": 5002,
+    "Females": 1498
+  },
+  {
+    "state": "State - MEGHALAYA",
+    "Males": 195,
+    "Females": 24
+  },
+  {
+    "state": "State - ASSAM",
+    "Males": 14990,
+    "Females": 2165
+  },
+  {
+    "state": "State - WEST BENGAL",
+    "Males": 131832,
+    "Females": 57969
+  },
+  {
+    "state": "State - JHARKHAND",
+    "Males": 12919,
+    "Females": 193
+  },
+  {
+    "state": "State - ODISHA",
+    "Males": 32732,
+    "Females": 9228
+  },
+  {
+    "state": "State - CHHATTISGARH",
+    "Males": 24578,
+    "Females": 5088
+  },
+  {
+    "state": "State - MADHYA PRADESH",
+    "Males": 72235,
+    "Females": 23431
+  },
+  {
+    "state": "State - GUJARAT",
+    "Males": 54319,
+    "Females": 9764
+  },
+  {
+    "state": "State - DAMAN & DIU",
+    "Males": 130,
+    "Females": 5
+  },
+  {
+    "state": "State - DADRA & NAGAR HAVELI",
+    "Males": 132,
+    "Females": 6
+  },
+  {
+    "state": "State - MAHARASHTRA",
+    "Males": 244189,
+    "Females": 52670
+  },
+  {
+    "state": "State - ANDHRA PRADESH",
+    "Males": 198228,
+    "Females": 45770
+  },
+  {
+    "state": "State - KARNATAKA",
+    "Males": 111205,
+    "Females": 23467
+  },
+  {
+    "state": "State - GOA",
+    "Males": 601,
+    "Females": 108
+  },
+  {
+    "state": "State - LAKSHADWEEP",
+    "Males": 0,
+    "Females": 0
+  },
+  {
+    "state": "State - KERALA",
+    "Males": 68951,
+    "Females": 5176
+  },
+  {
+    "state": "State - TAMIL NADU",
+    "Males": 234321,
+    "Females": 40353
+  },
+  {
+    "state": "State - PUDUCHERRY",
+    "Males": 5165,
+    "Females": 539
+  },
+  {
+    "state": "State - ANDAMAN & NICOBAR ISLANDS",
+    "Males": 0,
+    "Females": 0
+  }
+    ];
+    var key = ["Males", "Females"];
+    initStackedBarChart.draw({
+        data: data,
+        key: key,
+        element: 'stacked-bar'
+    });
+    </script>
