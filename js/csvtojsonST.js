@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var filePath = path.join(__dirname, 'IndiaST2011.csv');
+var filePath = path.join(__dirname, '../IndiaST2011.csv');
 var myReadStream = fs.readFile(filePath, 'utf8', function(err, data) {
     //console.log(data);
     data = data.split("\n");
@@ -49,7 +49,7 @@ var myReadStream = fs.readFile(filePath, 'utf8', function(err, data) {
         }
         ageData.push(obj)
     }
-    var outPath = path.join(__dirname, '/json/stage_literate.json');
+    var outPath = path.join(__dirname, '../json/stage_literate.json');
     fs.writeFile(outPath, JSON.stringify(ageData, null, 2), 'utf8',
         function(err) {
             console.log(err);
@@ -82,7 +82,7 @@ var myReadStream = fs.readFile(filePath, 'utf8', function(err, data) {
         }
         graduatesData.push(obj)
     }
-    var outPath = path.join(__dirname, '/json/stgraduates.json');
+    var outPath = path.join(__dirname, '../json/stgraduates.json');
     fs.writeFile(outPath, JSON.stringify(graduatesData, null, 2), 'utf8',
         function(err) {
             console.log(err);
@@ -114,7 +114,7 @@ var myReadStream = fs.readFile(filePath, 'utf8', function(err, data) {
         }
         educationData.push(obj)
     }
-    var outPath = path.join(__dirname, '/json/steducationCateogary.json');
+    var outPath = path.join(__dirname, '../json/steducationCateogary.json');
     fs.writeFile(outPath, JSON.stringify(educationData, null, 2), 'utf8',
         function(err) {
             console.log(err);
