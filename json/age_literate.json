@@ -1,0 +1,106 @@
+[
+  {
+    "age": "7",
+    "litterate": 18078426
+  },
+  {
+    "age": "8",
+    "litterate": 22836959
+  },
+  {
+    "age": "9",
+    "litterate": 20932734
+  },
+  {
+    "age": "10",
+    "litterate": 27097602
+  },
+  {
+    "age": "11",
+    "litterate": 22752473
+  },
+  {
+    "age": "12",
+    "litterate": 25485778
+  },
+  {
+    "age": "13",
+    "litterate": 22470207
+  },
+  {
+    "age": "14",
+    "litterate": 23157384
+  },
+  {
+    "age": "15",
+    "litterate": 23299497
+  },
+  {
+    "age": "16",
+    "litterate": 22079806
+  },
+  {
+    "age": "17",
+    "litterate": 19179012
+  },
+  {
+    "age": "18",
+    "litterate": 24230172
+  },
+  {
+    "age": "19",
+    "litterate": 18280414
+  },
+  {
+    "age": "20-24",
+    "litterate": 92744730
+  },
+  {
+    "age": "25-29",
+    "litterate": 78779525
+  },
+  {
+    "age": "30-34",
+    "litterate": 64265391
+  },
+  {
+    "age": "35-39",
+    "litterate": 57277557
+  },
+  {
+    "age": "40-44",
+    "litterate": 45631240
+  },
+  {
+    "age": "45-49",
+    "litterate": 37240564
+  },
+  {
+    "age": "50-54",
+    "litterate": 28247046
+  },
+  {
+    "age": "55-59",
+    "litterate": 21463974
+  },
+  {
+    "age": "60-64",
+    "litterate": 17674268
+  },
+  {
+    "age": "65-69",
+    "litterate": 11625376
+  },
+  {
+    "age": "70-74",
+    "litterate": 7640218
+  },
+  {
+    "age": "75-79",
+    "litterate": 3871311
+  },
+  {
+    "age": "80+",
+    "litterate": 4398558
+  }
+]
