@@ -1,0 +1,42 @@
+[
+  {
+    "cateogary": "Literate without educational level",
+    "cateogarySum": 19278416
+  },
+  {
+    "cateogary": "Below Primary",
+    "cateogarySum": 78445099
+  },
+  {
+    "cateogary": "Primary - Persons",
+    "cateogarySum": 99311072
+  },
+  {
+    "cateogary": "Educational level - Middle",
+    "cateogarySum": 77629578
+  },
+  {
+    "cateogary": "Educational level - Matric/Secondary",
+    "cateogarySum": 63769834
+  },
+  {
+    "cateogary": "Educational level - Higher secondary",
+    "cateogarySum": 46481321
+  },
+  {
+    "cateogary": "Educational level - Non-technical diploma",
+    "cateogarySum": 726565
+  },
+  {
+    "cateogary": "Educational level - Technical diploma",
+    "cateogarySum": 5354161
+  },
+  {
+    "cateogary": "Graduate & above ",
+    "cateogarySum": 42120460
+  },
+  {
+    "cateogary": "Unclassified",
+    "cateogarySum": 1647116
+  }
+]
