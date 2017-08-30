@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
 body {
     font: 10px sans-serif;
     margin-left: 10%;
@@ -37,7 +34,6 @@ body {
 
 
 
-
 /* Creates a small triangle extender for the tooltip */
 
 .d3-tip:after {
@@ -55,7 +51,6 @@ body {
 
 
 
-
 /* Style northward tooltips differently */
 
 .d3-tip.n:after {
@@ -63,10 +58,3 @@ body {
     top: 100%;
     left: 0;
 }
-</style>
-
-<body>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    <script src="../js/stCateogary.js"></script>
-</body>
